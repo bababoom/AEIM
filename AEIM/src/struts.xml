@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="struts_action" extends="struts-default">
+		
+		<action name="Load" class="com.action.Load_Action">
+			<result name="success">/dis_info.jsp</result>			
+		</action>
+		<action name="Pre_update" class="com.action.Pre_update_Action">
+			<result name="success">/update.jsp</result>			
+		</action>
+		<action name="Login" class="com.action.Login_Action">
+			<result type="chain">Load</result>	
+			<result name="fail"		>/index.jsp</result>
+		</action>
+		<action name="Do_update" class="com.action.do_update">
+			<result type="chain">Load</result>			
+		</action>
+		<action name="Load_Dept" class="com.action.Load_Dept">
+			<result name="success">/dis_Dept.jsp</result>		
+		</action>
+		<action name="Pre_Load_Dept" class="com.action.pre_update_Dept">
+			<result name="success">/update_Dept.jsp</result>		
+		</action>
+		<action name="Do_update_Dept" class="com.action.Update_Dept">
+			<result name="success" type="chain">Load_Dept</result>	
+			<result name="fail" type="chain" >Pre_Load_Dept</result>	
+		</action>
+		<action name="Delete_Dept" class="com.action.Delete_Dept_Action">
+			<result name="success" type="chain">Load_Dept</result>		
+		</action>
+		<action name="Add_Dept" class="com.action.Add_Dept_Action">
+			<result name="success" type="chain">Load_Dept</result>		
+		</action>
+		<action name="Pre_Add_Dept" class="com.action.pre_Add_Dept">
+			<result name="success">/Add_Dept.jsp</result>		
+		</action>
+		<action name="Pre_InEmp" class="com.action.Pre_InEmp">
+			<result name="success">/InEmp.jsp</result>		
+		</action>
+		<action name="In_Emp" class="com.action.InEmp">
+			<result name="success" type="chain">Load</result>		
+		</action>
+		<action name="Pre_OutEmp" class="com.action.Pre_OutEmp">
+			<result name="success">/outEmp.jsp</result>		
+		</action>
+		<action name="Out_Emp" class="com.action.Out_Emp">
+			<result name="success" type="chain">Load</result>		
+		</action>
+		<action name="Load_Move" class="com.action.Load_Move">
+			<result name="success">/Move.jsp</result>		
+		</action>
+		<action name="Do_Move" class="com.action.Do_Move">
+			<result name="success" type="chain">Load</result>		
+		</action>
+		<action name="Load_In" class="com.action.Load_In">
+			<result name="success">/dis_In.jsp</result>		
+		</action>
+		<action name="Load_Out" class="com.action.Load_Out">
+			<result name="success">/dis_Out.jsp</result>		
+		</action>
+		<action name="Load_Moved" class="com.action.Load_Moved">
+			<result name="success">/dis_Move.jsp</result>		
+		</action>
+		<action name="Load_Sal" class="com.action.Load_SalGrade">
+			<result name="success" >/sal_Grade.jsp</result>		
+		</action>
+		<action name="Pre_Edit" class="com.action.Edit_Sal">
+			<result name="success" >/edit_Sal.jsp</result>		
+		</action>
+		<action name="Load_Rework" class="com.action.Load_Rework">
+			<result name="success" >/rework.jsp</result>		
+		</action>
+		<action name="Do_rework" class="com.action.Do_Rework">
+			<result name="success" type="chain">Load</result>		
+		</action>
+		<action name="Load_Rework_Action" class="com.action.Load_ReWork_Action">
+			<result name="success" >/dis_Rework.jsp</result>		
+		</action>
+	</package>
+</struts>    
